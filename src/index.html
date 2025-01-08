@@ -9,14 +9,15 @@
 
   <body>
 
-  <div id="container"></div>
+
+  <div id="konva-layer"></div>
 
   <script>
     // ステージを作成
     const stage = new Konva.Stage({
-      container: 'container', // div ID
-      width: window.innerWidth,
-      height: window.innerHeight,
+      container: 'konva-layer',
+      width: 500,
+      height: 500,
     });
 
     // レイヤーを作成
@@ -25,8 +26,8 @@
 
     for (let i = 0; i < 10; i++) {
       const rect = new Konva.Rect({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
+        x: i * 10,
+        y: i * 10,
         width: 150,
         height: 100,
         fill: 'blue',
