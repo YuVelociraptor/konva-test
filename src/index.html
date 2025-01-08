@@ -3,8 +3,43 @@
   <head>
     <meta charset="UTF-8">
     <title>konva test</title>
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+
   </head>
 
   <body>
+
+  <div id="container"></div>
+
+  <script>
+    // ステージを作成
+    const stage = new Konva.Stage({
+      container: 'container', // div ID
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+
+    // レイヤーを作成
+    const layer = new Konva.Layer();
+    stage.add(layer);
+
+    for (let i = 0; i < 10; i++) {
+      const rect = new Konva.Rect({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        width: 150,
+        height: 100,
+        fill: 'blue',
+        stroke: 'black',
+        strokeWidth: 4,
+        draggable: true,
+      });
+      layer.add(rect);
+    }
+
+    // レイヤーを描画
+    layer.draw();
+  </script>
+
   </body>
 </html>
